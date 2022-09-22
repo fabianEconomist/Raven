@@ -1,0 +1,43 @@
+﻿@model List<SoatModelo>
+@{
+    ViewData["Title"] = "Listar SOAT";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        Listado SOAT
+    </div>
+    <div class="card-body">
+        <a asp-action="Guardar" asp-controller="MantenedorSoat" class="btn btn-success"><i class="bi bi-plus-circle"></i> Nuevo</a>
+        <hr />
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    
+                    <th>Placa</th>
+                    <th>Numero de Soat</th>
+                    <th>Fecha de Compra</th>
+                    <th>Fecha de Expiración</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        
+                        <td>@item.Placa</td>
+                        <td>@item.NumeroSoat</td>
+                        <td>@item.FechaCompra</td>
+                        <td>@item.FechaExpira</td>
+                        <td>
+                            <a asp-action="Editar" asp-controller="MantenedorSoat" class="btn btn-primary btn-sm" asp-route-IdSoat="@item.IdSoat">Editar</a>
+                            <a asp-action="Eliminar" asp-controller="MantenedorSoat" class="btn btn-danger btn-sm" asp-route-IdSoat="@item.IdSoat">Eliminar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

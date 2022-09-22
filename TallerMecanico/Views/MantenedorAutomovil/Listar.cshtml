@@ -1,0 +1,53 @@
+﻿@model List<AutomovilModelo>
+@{
+    ViewData["Title"] = "Listar Automoviles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        Listar Automoviles
+    </div>
+    <div class="card-body">
+        <a asp-action="Guardar" asp-controller="MantenedorAutomovil" class="btn btn-success"><i class="bi bi-plus-circle"></i> Nuevo</a>
+        <hr />
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    
+                    <th>Placa</th>
+                    <th>Tipo</th>
+                    <th>Modelo</th>
+                    <th>Marca</th>
+                    <th>Ciudad de Origen</th>
+                    <th>Descripcion</th>
+                    <th>Capacidad</th>
+                    <th>Cilindraje</th>
+                    <th>Identificacion</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        
+                        <td>@item.Placa</td>
+                        <td>@item.Tipo</td>
+                        <td>@item.Modelo</td>
+                        <td>@item.Marca</td>
+                        <td>@item.CiudadOrigen</td>
+                        <td>@item.Descripcion</td>
+                        <td>@item.Capacidad</td>
+                        <td>@item.Cilindraje</td>
+                        <td>@item.Identificacion</td>
+                        <td>
+                            <a asp-action="Editar" asp-controller="MantenedorAutomovil" class="btn btn-primary btn-sm" asp-route-IdAutomovil="@item.IdAutomovil">Editar</a>
+                            <a asp-action="Eliminar" asp-controller="MantenedorAutomovil" class="btn btn-danger btn-sm" asp-route-IdAutomovil="@item.IdAutomovil">Eliminar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

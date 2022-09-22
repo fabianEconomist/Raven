@@ -1,0 +1,52 @@
+﻿@model SoatModelo
+@{
+    ViewData["Title"] = "Editar SOAT";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        Editar SOAT
+    </div>
+    <div class="card-body">
+
+        <form asp-action="Editar" asp-controller="MantenedorSoat" method="post">
+
+            <input asp-for="IdSoat" type="hidden" class="form-control">
+
+            <div class="mb-3">
+                <label class="form-label">FKIdAutomovil</label>
+                <input asp-for="FKIdAutomovil" type="text" class="form-control">
+                <span asp-validation-for="FKIdAutomovil" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Placa</label>
+                <input asp-for="Placa" type="text" class="form-control">
+                <span asp-validation-for="Placa" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">NumeroSoat</label>
+                <input asp-for="NumeroSoat" type="text" class="form-control">
+                <span asp-validation-for="NumeroSoat" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">FechaCompra</label>
+                <input asp-for="FechaCompra" type="text" class="form-control">
+                <span asp-validation-for="FechaCompra" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">FechaExpira</label>
+                <input asp-for="FechaExpira" type="text" class="form-control">
+                <span asp-validation-for="FechaExpira" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Guardar</button>
+
+            <a asp-action="Listar" asp-controller="MantenedorSoat" class="btn btn-warning">Volver a la lista</a>
+        </form>
+    </div>
+</div>

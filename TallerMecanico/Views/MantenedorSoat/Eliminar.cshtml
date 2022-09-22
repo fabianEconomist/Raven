@@ -1,0 +1,26 @@
+﻿@model SoatModelo
+@{
+    ViewData["Title"] = "Eliminar SOAT";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        Eliminar SOAT
+    </div>
+    <div class="card-body">
+
+
+        <form asp-action="Eliminar" asp-controller="MantenedorSoat" method="post">
+
+            <input asp-for="IdSoat" type="hidden" class="form-control">
+
+            <div class="alert alert-danger" role="alert">
+                ¿Desea eliminar el SOAT : @Html.DisplayTextFor(m => m.NumeroSoat) ?
+            </div>
+
+            <button type="submit" class="btn btn-danger">Elimnar</button>
+            <a asp-action="Listar" asp-controller="MantenedorSoat" class="btn btn-warning">Volver a la lista</a>
+        </form>
+    </div>
+</div>

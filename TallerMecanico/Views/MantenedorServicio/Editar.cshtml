@@ -1,0 +1,63 @@
+﻿@model ServicioModelo
+@{
+    ViewData["Title"] = "Editar Cliente";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        Editar Servicio
+    </div>
+    <div class="card-body">
+
+        <form asp-action="Editar" asp-controller="MantenedorServicio" method="post">
+
+            <input asp-for="IdServicio" type="hidden" class="form-control">
+
+            <div class="mb-3">
+                <label class="form-label">Placa</label>
+                <input asp-for="Placa" type="text" class="form-control">
+                <span asp-validation-for="Placa" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Id Mecanico</label>
+                <input asp-for="FKIdMecanico" type="text" class="form-control">
+                <span asp-validation-for="FKIdMecanico" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Nivel de Aceite</label>
+                <input asp-for="NivelAceite" type="text" class="form-control">
+                <span asp-validation-for="NivelAceite" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Nivel de frenos</label>
+                <input asp-for="NivelFrenos" type="text" class="form-control">
+                <span asp-validation-for="NivelFrenos" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Nivel de direccion</label>
+                <input asp-for="NivelDireccion" type="text" class="form-control">
+                <span asp-validation-for="NivelDireccion" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Nivel de Refrigerante</label>
+                <input asp-for="NivelRefrigerante" type="text" class="form-control">
+                <span asp-validation-for="NivelRefrigerante" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Repuestos</label>
+                <input asp-for="Repuestos" type="text" class="form-control">
+                <span asp-validation-for="Repuestos" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Guardar</button>
+
+            <a asp-action="Listar" asp-controller="MantenedorServicio" class="btn btn-warning">Volver a la lista</a>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+﻿@model AdministrativoModelo
+@{
+    ViewData["Title"] = "Eliminar Administrativo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        Eliminar Administrativo
+    </div>
+    <div class="card-body">
+
+
+        <form asp-action="Eliminar" asp-controller="MantenedorAdministrativo" method="post">
+
+            <input asp-for="Idpersona" type="hidden" class="form-control">
+
+            <div class="alert alert-danger" role="alert">
+                ¿Desea eliminar el Administrativo : @Html.DisplayTextFor(m => m.Nombre) ?
+            </div>
+
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+            <a asp-action="Listar" asp-controller="MantenedorAdministrativo" class="btn btn-warning">Volver a la lista</a>
+        </form>
+    </div>
+</div>
+

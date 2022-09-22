@@ -1,0 +1,72 @@
+﻿@model AutomovilModelo
+@{
+    ViewData["Title"] = "Guardar Automovil";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Guardar</h1>
+<div class="card">
+    <div class="card-header">
+        Crear Automovil
+    </div>
+    <div class="card-body">
+
+        <form asp-action="Guardar" asp-controller="MantenedorAutomovil" method="post">
+
+            <div class="mb-3">
+                <label class="form-label">Identificacion</label>
+                <input asp-for="Identificacion" type="text" class="form-control">
+                <span asp-validation-for="Identificacion" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Placa</label>
+                <input asp-for="Placa" type="text" class="form-control">
+                <span asp-validation-for="Placa" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Tipo</label>
+                <input asp-for="Tipo" type="text" class="form-control">
+                <span asp-validation-for="Tipo" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Modelo</label>
+                <input asp-for="Modelo" type="text" class="form-control">
+                <span asp-validation-for="Modelo" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Marca</label>
+                <input asp-for="Marca" type="text" class="form-control">
+                <span asp-validation-for="Marca" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Ciudad de Origen</label>
+                <input asp-for="CiudadOrigen" type="text" class="form-control">
+                <span asp-validation-for="CiudadOrigen" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Descripcion</label>
+                <input asp-for="Descripcion" type="text" class="form-control">
+                <span asp-validation-for="Descripcion" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Capacidad</label>
+                <input asp-for="Capacidad" type="text" class="form-control">
+                <span asp-validation-for="Capacidad" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Cilindraje</label>
+                <input asp-for="Cilindraje" type="text" class="form-control">
+                <span asp-validation-for="Cilindraje" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Guardar</button>
+
+            <a asp-action="Listar" asp-controller="MantenedorAutomovil" class="btn btn-warning">Volver a la lista</a>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+﻿@model MecanicoModelo
+@{
+    ViewData["Title"] = "Eliminar Mecanico";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        Eliminar Mecanico
+    </div>
+    <div class="card-body">
+
+
+        <form asp-action="Eliminar" asp-controller="MantenedorMecanico" method="post">
+
+            <input asp-for="Idpersona" type="hidden" class="form-control">
+
+            <div class="alert alert-danger" role="alert">
+                ¿Desea eliminar el mecanico : @Html.DisplayTextFor(m => m.Nombre) ?
+            </div>
+
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+            <a asp-action="Listar" asp-controller="MantenedorMecanico" class="btn btn-warning">Volver a la lista</a>
+        </form>
+    </div>
+</div>
+
+

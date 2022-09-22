@@ -1,0 +1,44 @@
+﻿@model SoatModelo
+@{
+    ViewData["Title"] = "Guardar SOAT";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        Crear SOAT
+    </div>
+    <div class="card-body">
+
+        <form asp-action="Guardar" asp-controller="MantenedorSoat" method="post">
+
+            <div class="mb-3">
+                <label class="form-label">Placa</label>
+                <input asp-for="Placa" type="text" class="form-control">
+                <span asp-validation-for="Placa" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Numero de Soat</label>
+                <input asp-for="NumeroSoat" type="text" class="form-control">
+                <span asp-validation-for="NumeroSoat" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Fecha de Compra</label>
+                <input asp-for="FechaCompra" type="text" class="form-control">
+                <span asp-validation-for="FechaCompra" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Fecha de Expiración</label>
+                <input asp-for="FechaExpira" type="text" class="form-control">
+                <span asp-validation-for="FechaExpira" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Guardar</button>
+
+            <a asp-action="Listar" asp-controller="MantenedorSoat" class="btn btn-warning">Volver a la lista</a>
+        </form>
+    </div>
+</div>
+
